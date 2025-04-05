@@ -5,6 +5,7 @@
   --box-shadow: 2px;
   --border-radius: 5px;
   --border-size: 2px;
+  --tooltip-gap: 0.75rem;
 }
 
 .container {
@@ -15,6 +16,8 @@
 }
 
 .navbar {
+  display: flex;
+  justify-content: space-around;
   width: min(100%, 640px);
   height: min-content;
   border: var(--border-size) solid black;
@@ -35,8 +38,31 @@
 .tooltip-container {
   position: relative;
   & .tooltip {
+    width: max(100%, 160px);
     position: absolute;
     display: none;
+    background-color: var(--primary-color);
+    border: var(--border-size) solid black;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--border-radius);
+    z-index: 1;
+    text-align: center;
+    &.tooltip-top {
+      bottom: calc(100% + var(--tooltip-gap));
+      left: 0;
+    }
+    &.tooltip-bottom {
+      top: calc(100% + var(--tooltip-gap));
+      left: 0;
+    }
+    &.tooltip-left {
+      top: 0;
+      right: calc(100% + var(--tooltip-gap));
+    }
+    &.tooltip-right {
+      top: 0;
+      left: calc(100% + var(--tooltip-gap));
+    }
   }
 
   &:is(:hover) {

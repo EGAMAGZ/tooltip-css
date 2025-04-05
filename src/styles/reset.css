@@ -21,20 +21,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ul, ol {
-  list-style: none; /* Remove default list styles */
+  list-style: none;
 }
 
 a {
-  text-decoration: none; /* Remove underline from links */
-  color: inherit; /* Inherit color from parent */
+  text-decoration: none;
+  color: inherit;
 }
 
 img {
-  max-width: 100%; /* Responsive images */
-  height: auto; /* Maintain aspect ratio */
+  max-width: 100%;
+  height: auto;
 }
 
 table {
-  border-collapse: collapse; /* Collapse borders */
-  width: 100%; /* Full width tables */
+  border-collapse: collapse;
+  width: 100%;
 }
