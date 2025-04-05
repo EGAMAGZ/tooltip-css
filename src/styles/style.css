@@ -1,0 +1,82 @@
+@import "reset.css";
+
+:root {
+  --primary-color: #88aaee;
+  --box-shadow: 2px;
+  --border-radius: 5px;
+  --border-size: 2px;
+}
+
+.container {
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar {
+  width: min(100%, 640px);
+  height: min-content;
+  border: var(--border-size) solid black;
+  background-color: var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.tooltip-container {
+  position: relative;
+  & .tooltip {
+    position: absolute;
+    display: none;
+  }
+
+  &:is(:hover) {
+    & .tooltip {
+      display: block;
+      animation: fadeIn ease-in-out 200ms;
+    }
+  }
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: var(--border-size) solid #000;
+  border-radius: var(--border-radius);
+  box-shadow: black var(--box-shadow) var(--box-shadow);
+  text-align: center;
+  line-height: 20px;
+  transition: transform ease-in 150ms;
+  font-weight: 700;
+  gap: 0.5rem;
+
+  display: inline-flex;
+  justify-items: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  /*transform: translateX(var(--box-shadow)) translateY(var(--box-shadow));*/
+
+  &.reverse {
+    /*TODO: IMPLEMENT ANIMATION*/
+    box-shadow: none;
+  }
+
+  &.no-shadow {
+    /*TODO: IMPLEMENT ANIMATION*/
+    box-shadow: none;
+  }
+
+  &.neutral {
+    /*TODO: IMPLEMENT ANIMATION*/
+    background-color: white;
+  }
+}

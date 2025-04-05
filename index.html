@@ -1,12 +1,23 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Tooltip CSS</title>
   </head>
   <body>
+    <div class="container">
+      <nav class="navbar">
+        <label class="tooltip-container">
+          <span class="tooltip">Hola</span>
+          <button type="button" class="btn no-shadow">Acción</button>
+        </label>
+        <button type="button" class="btn">Acción</button>
+        <button type="button" class="btn neutral">Acción</button>
+        <button type="button" class="btn reverse">Acción</button>
+      </nav>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
