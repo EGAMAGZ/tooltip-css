@@ -100,6 +100,7 @@
   text-align: center;
   line-height: 20px;
   transition: box-shadow ease-in 150ms;
+  transform: translateY(0);
   font-weight: 700;
   gap: 0.5rem;
 
@@ -110,18 +111,22 @@
 
   &:is(:hover, :active) {
     --box-shadow: 0;
+    transform: translateY(calc(var(--border-size) * 1));
 
     &.reverse {
       --box-shadow: 4px;
+      transform: translateY(calc(var(--border-size) * -1));
     }
   }
 
   &.reverse {
     --box-shadow: 0;
+    transform: translateY(0);
   }
 
   &.no-shadow {
     --box-shadow: 0;
+    transform: translateY(0);
   }
 
   &.neutral {
