@@ -2,7 +2,7 @@
 
 :root {
   --primary-color: #88aaee;
-  --box-shadow: 2px;
+  --box-shadow: 4px;
   --border-radius: 5px;
   --border-size: 2px;
   --tooltip-gap: 0.75rem;
@@ -49,19 +49,23 @@
     text-align: center;
     &.tooltip-top {
       bottom: calc(100% + var(--tooltip-gap));
-      left: 0;
+      left: 50%;
+      transform: translateX(-50%);
     }
     &.tooltip-bottom {
       top: calc(100% + var(--tooltip-gap));
-      left: 0;
+      left: 50%;
+      transform: translateX(-50%);
     }
     &.tooltip-left {
-      top: 0;
+      top: 50%;
       right: calc(100% + var(--tooltip-gap));
+      transform: translateY(-50%);
     }
     &.tooltip-right {
-      top: 0;
+      top: 50%;
       left: calc(100% + var(--tooltip-gap));
+      transform: translateY(-50%);
     }
   }
 
@@ -89,7 +93,6 @@
   justify-items: center;
   align-items: center;
   background-color: var(--primary-color);
-  /*transform: translateX(var(--box-shadow)) translateY(var(--box-shadow));*/
 
   &.reverse {
     /*TODO: IMPLEMENT ANIMATION*/
