@@ -1,0 +1,135 @@
+@import "reset.css";
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --primary-color: #88aaee;
+  --box-shadow: 4px;
+  --border-radius: 5px;
+  --border-size: 2px;
+  --tooltip-gap: 0.75rem;
+}
+
+* {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.container {
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  width: min(100%, 640px);
+  height: min-content;
+  border: var(--border-size) solid black;
+  background-color: var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.tooltip-container {
+  position: relative;
+
+  & .tooltip {
+    width: max(100%, 160px);
+    position: absolute;
+    display: none;
+    background-color: var(--primary-color);
+    border: var(--border-size) solid black;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--border-radius);
+    z-index: 1;
+    text-align: center;
+
+    &.tooltip-top {
+      bottom: calc(100% + var(--tooltip-gap));
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &.tooltip-bottom {
+      top: calc(100% + var(--tooltip-gap));
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &.tooltip-left {
+      top: 50%;
+      right: calc(100% + var(--tooltip-gap));
+      transform: translateY(-50%);
+    }
+    &.tooltip-right {
+      top: 50%;
+      left: calc(100% + var(--tooltip-gap));
+      transform: translateY(-50%);
+    }
+  }
+
+  &:is(:hover) {
+    & .tooltip {
+      display: block;
+      animation: fadeIn ease-in-out 200ms;
+    }
+  }
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: var(--border-size) solid #000;
+  border-radius: var(--border-radius);
+  box-shadow: black var(--box-shadow) var(--box-shadow);
+  text-align: center;
+  line-height: 20px;
+  transition: box-shadow ease-in 150ms;
+  transform: translateY(0);
+  font-weight: 700;
+  gap: 0.5rem;
+
+  display: inline-flex;
+  justify-items: center;
+  align-items: center;
+  background-color: var(--primary-color);
+
+  &:is(:hover, :active) {
+    --box-shadow: 0;
+    transform: translateY(calc(var(--border-size) * 1));
+
+    &.reverse {
+      --box-shadow: 4px;
+      transform: translateY(calc(var(--border-size) * -1));
+    }
+  }
+
+  &.reverse {
+    --box-shadow: 0;
+    transform: translateY(0);
+  }
+
+  &.no-shadow {
+    --box-shadow: 0;
+    transform: translateY(0);
+  }
+
+  &.neutral {
+    --primary-color: white;
+  }
+}
